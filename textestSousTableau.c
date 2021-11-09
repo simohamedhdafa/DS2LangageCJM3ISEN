@@ -15,30 +15,26 @@ bool estSousTableau_AllTests(int (*inputs) [], int, bool outputs[]);
 
 // programme principal
 void main(){
-    // dclaration de variables
-    int A[MAX], a[MAX], Na, NA;
-    bool sousTableau = true;
+    int A2 [] = {1, -1, 0, 10, 2, -7, 25};
+    int a2 [] = {1, -1, 0, 10, 2, -7};
+    
+    int A1 [] = {3, 11, 2, 8};
+    int a1 [] = {11, 11, 2};
 
-    // saisie de Na et NA 
-    do{
-        printf("Entrer NA et Na (entre 1 et 100):\n");
-        scanf("%d %d", &NA, &Na);
-    }while(Na>NA || Na<0 || NA<0 || Na>MAX || NA>MAX);
+    // premier test
+    if(estSousTableau_test(A1, a1, 4, 3, false)){
+        printf("test reussi\n");
+    }else{
+        printf("le test ne passe pas\n");
+    }
 
-    // saisie de A et a
-    saisirTableau(A, NA, "A");
-    saisirTableau(a, Na, "a");
+    // 2me test
+   if(estSousTableau_test(A2, a2, 7, 6, true)){
+       printf("test reussi\n");
+    }else{
+        printf("le test ne passe pas\n");
+    }
 
-    // affichage de A et a
-    afficherTableau(A, NA, "A");
-    afficherTableau(a, Na, "a");
-
-    sousTableau = estSousTableau(A, a, NA, Na);
-
-    if(sousTableau) printf("a est sous tab de A.\n");
-    else printf("a n'est pas sous tab de A.\n");
-
-    printf("Fin du programme.\n");
 }
 
 // implémntation de fonctions
