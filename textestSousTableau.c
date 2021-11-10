@@ -3,6 +3,7 @@
 
 // une taille maximale statique (reelle) de tableaux
 #define MAX 100
+#define MAX_TEST 50
 
 // les déclarations de fonctions
 bool estSousTableau(int [], int [], int, int);
@@ -11,10 +12,13 @@ void saisirTableau(int [], int, char *);
 
 // fonctions de tests
 bool estSousTableau_test(int [], int [], int, int, bool);
-bool estSousTableau_AllTests(int (*inputs) [], int, bool outputs[]);
+//bool estSousTableau_AllTests(int (*inputs) [], int, bool outputs[]);
+void saisirAllTests(int inputs[][], int nbr_test, bool outputs[]);
 
 // programme principal
 void main(){
+    int inputes [MAX_TEST][2*MAX+2];
+
     int A2 [] = {1, -1, 0, 10, 2, -7, 25};
     int a2 [] = {1, -1, 0, 10, 2, -7};
     
@@ -87,3 +91,17 @@ bool estSousTableau_AllTests(int (*inputs) [], int max, int nbr_test, bool outpu
     return true;
 }
 */
+
+void saisirAllTests(int inputs[][], int nbr_test, bool outputs[]){
+    int i, j;
+    int * p = inputs;
+    printf("Vous allez saisir %d test:\n");
+    for(i=0; i<nbr_test; i++){
+        printf("saisie du tst numero %d:\n");
+        printf("\tentrer la taille de A et a:");
+        scanf("%d %d", p+ i*(2*MAX+2)+2*MAX-2, p+i*(2*MAX+2)+2*MAX-1);
+        for(j=0; j<inputs[i][2*MAX+1])
+        printf("\tentrer A[%d]: ");
+
+    }
+}
