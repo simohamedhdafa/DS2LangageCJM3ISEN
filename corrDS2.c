@@ -9,10 +9,6 @@ bool estSousTableau(int [], int [], int, int);
 void afficherTableau(int [], int, char *);
 void saisirTableau(int [], int, char *);
 
-// fonctions de tests
-bool estSousTableau_test(int [], int [], int, int, bool);
-bool estSousTableau_AllTests(int (*inputs) [], int, bool outputs[]);
-
 // programme principal
 void main(){
     // dclaration de variables
@@ -79,15 +75,3 @@ void saisirTableau(int t[], int n, char * nomTab){
     }
 }
 
-bool estSousTableau_test(int T[], int t[], int longueurT, int longueurt, bool output){
-        return estSousTableau(T, t, longueurT, longueurt) == output;
-}
-/*
-bool estSousTableau_AllTests(int (*inputs) [], int max, int nbr_test, bool outputs[]){
-    int (*p) [2*max+2];
-    for(p=inputs; p<(inputs+nbr_test); p++){
-
-    }
-    return true;
-}
-*/
