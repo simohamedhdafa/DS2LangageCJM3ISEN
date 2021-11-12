@@ -7,23 +7,30 @@
 
 // les déclarations de fonctions
 bool estSousTableau(int [], int [], int, int);
-void afficherTableau(int [], int, char *);
-void saisirTableau(int [], int, char *);
 
 // fonctions de tests
 bool estSousTableau_test(int [], int [], int, int, bool);
 //bool estSousTableau_AllTests(int (*inputs) [], int, bool outputs[]);
-void saisirAllTests(int inputs[][], int nbr_test, bool outputs[]);
+//void saisirAllTests(int inputs[][], int nbr_test, bool outputs[]);
 
 // programme principal
 void main(){
-    int inputes [MAX_TEST][2*MAX+2];
+    //int inputes [MAX_TEST][2*MAX+2];
 
     int A2 [] = {1, -1, 0, 10, 2, -7, 25};
     int a2 [] = {1, -1, 0, 10, 2, -7};
     
     int A1 [] = {3, 11, 2, 8};
     int a1 [] = {11, 11, 2};
+
+    int A3 [] = {0};
+    int a3 [] = {0};
+
+    int A4 [] = {1};
+    int a4 [] = {0};
+
+    int A5 [] = {1, 2, -7, 0, 5, -6, 10, 12};
+    int a5 [] = {-7, 0, 8, 5, -6};
 
     // premier test
     if(estSousTableau_test(A1, a1, 4, 3, false)){
@@ -34,6 +41,27 @@ void main(){
 
     // 2me test
    if(estSousTableau_test(A2, a2, 7, 6, true)){
+       printf("test reussi\n");
+    }else{
+        printf("le test ne passe pas\n");
+    }
+
+    // 3me test
+   if(estSousTableau_test(A3, a3, 1, 1, true)){
+       printf("test reussi\n");
+    }else{
+        printf("le test ne passe pas\n");
+    }
+
+    // 4me test
+   if(estSousTableau_test(A4, a4, 1, 1, false)){
+       printf("test reussi\n");
+    }else{
+        printf("le test ne passe pas\n");
+    }
+
+    // 5me test
+   if(estSousTableau_test(A5, a5, 8, 5, false)){
        printf("test reussi\n");
     }else{
         printf("le test ne passe pas\n");
@@ -64,21 +92,6 @@ bool estSousTableau(int A[], int a[], int NA, int Na){
     return true;
 }
 
-void afficherTableau(int t[], int n, char * nomTab){
-    int i;
-    printf("Vous avez saisi le tableau %s suivant:\n", nomTab);
-    for(i=0; i<n; i++) printf("\t%d", t[i]);
-    printf("\n");
-}
-
-void saisirTableau(int t[], int n, char * nomTab){
-    int i;
-    for(i=0; i<n; i++){
-        printf("votre tableau %s [%d]=", nomTab, i);
-        scanf("%d", &t[i]);
-    }
-}
-
 bool estSousTableau_test(int T[], int t[], int longueurT, int longueurt, bool output){
         return estSousTableau(T, t, longueurT, longueurt) == output;
 }
@@ -92,6 +105,7 @@ bool estSousTableau_AllTests(int (*inputs) [], int max, int nbr_test, bool outpu
 }
 */
 
+/*
 void saisirAllTests(int inputs[][], int nbr_test, bool outputs[]){
     int i, j;
     int * p = inputs;
@@ -105,3 +119,4 @@ void saisirAllTests(int inputs[][], int nbr_test, bool outputs[]){
 
     }
 }
+*/
